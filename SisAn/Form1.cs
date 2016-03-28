@@ -529,7 +529,10 @@ namespace SisAn
 
         private void edit_exp_Click(object sender, EventArgs e) //эксперта
         {
-            dtgrdwExp.CurrentCell.Value = txtExpEdit.Text;
+            if ((txtExpEdit.Text != "")&&(dtgrdwExp.RowCount!=0))
+            {
+                dtgrdwExp.CurrentCell.Value = txtExpEdit.Text;
+            }
             txtExpEdit.Text = "";
         }
 
@@ -662,17 +665,18 @@ namespace SisAn
                         //для матрицы
                         int posit = 0;
                         dtgrdwMatrix2.Rows.Clear();
-                        /*
-                        for (int i = 0; i < alts.Length; i++)
-                        {
-                            dtgrdwMatrix2.Columns.Add("z" + (i + 1).ToString(), "z" + (i + 1).ToString());
-                        }*/
 
                         dtgrdwMatrix2.Rows.Add(alts.Length);
+                        for (int i = 0; i < alts.Length; i++)
+                        {
+                            dtgrdwMatrix2.Rows[i].HeaderCell.Value = "Э" + (i+1).ToString();
+                        }
+
                         if (!load)
                         {
                             for (int j = 0; j < alts.Length; j++)
                             {
+
                                 for (int i = 0; i < alts.Length; i++)
                                 {
                                     dtgrdwMatrix2[j, i].Value = "";
@@ -707,6 +711,64 @@ namespace SisAn
                     break;
             }
         }
-#endregion
+        #endregion
+
+        private void txtExpEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            if ((e.KeyChar >= '0') && (e.KeyChar <= '9'))
+                txtExpEdit.Text += e.KeyChar;
+            if ((e.KeyChar == 8)&&(txtExpEdit.Text!=""))
+                txtExpEdit.Text = txtExpEdit.Text.Remove(txtExpEdit.TextLength - 1, 1);
+            if ((e.KeyChar == (char) Keys.Return)&& (txtExpEdit.Text != ""))
+            {
+                if(dtgrdwExp.RowCount != 0)
+                    dtgrdwExp.CurrentCell.Value = txtExpEdit.Text;
+                txtExpEdit.Text = "";
+            }
+        
+        }
+
+        private void txtAddEval_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0') && (e.KeyChar <= '9'))
+                txtAddEval.Text += e.KeyChar;
+            if ((e.KeyChar == 8) && (txtAddEval.Text != ""))
+                txtAddEval.Text = txtAddEval.Text.Remove(txtAddEval.TextLength - 1, 1);
+
+        }
+
+        private void dtgrdwMatrix2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            for (int i = 0; i < dtgrdwMatrix2.Rows.Count; i++)
+            {
+                double summ=0;
+                for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
+                {
+
+                    summ += Convert.ToSingle(dtgrdwMatrix2[j, i].Value);
+                }
+                if (Convert.ToSingle(summ) != 1.0)
+                {
+                    MessageBox.Show("Неверно задана матрица предпочтений!");
+                    for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
+                    {
+                        dtgrdwMatrix2.Rows[i].Cells[j].Style.BackColor = Color.Red;
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
+                    {
+                        dtgrdwMatrix2.Rows[i].Cells[j].Style.BackColor = Color.White;
+                    }
+                }
+
+
+            }
+            return;
+        }
+
+
     }
 }

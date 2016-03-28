@@ -33,12 +33,12 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.альтернативаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.матрицаПредпочтенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЭкспертовToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.матрицаПредпочтенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.матрицаПредпочтенийToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокАльтернативToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЭкспертовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокАльтернативToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.матрицаПредпочтенийToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -130,7 +130,7 @@
             this.списокЭкспертовToolStripMenuItem1,
             this.матрицаПредпочтенийToolStripMenuItem});
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             // 
             // альтернативаToolStripMenuItem
@@ -140,19 +140,19 @@
             this.альтернативаToolStripMenuItem.Text = "Список альтернатив";
             this.альтернативаToolStripMenuItem.Click += new System.EventHandler(this.альтернативаToolStripMenuItem_Click);
             // 
-            // матрицаПредпочтенийToolStripMenuItem
-            // 
-            this.матрицаПредпочтенийToolStripMenuItem.Name = "матрицаПредпочтенийToolStripMenuItem";
-            this.матрицаПредпочтенийToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.матрицаПредпочтенийToolStripMenuItem.Text = "Матрица предпочтений";
-            this.матрицаПредпочтенийToolStripMenuItem.Click += new System.EventHandler(this.матрицаПредпочтенийToolStripMenuItem_Click);
-            // 
             // списокЭкспертовToolStripMenuItem1
             // 
             this.списокЭкспертовToolStripMenuItem1.Name = "списокЭкспертовToolStripMenuItem1";
             this.списокЭкспертовToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
             this.списокЭкспертовToolStripMenuItem1.Text = "Список экспертов";
             this.списокЭкспертовToolStripMenuItem1.Click += new System.EventHandler(this.списокЭкспертовToolStripMenuItem1_Click);
+            // 
+            // матрицаПредпочтенийToolStripMenuItem
+            // 
+            this.матрицаПредпочтенийToolStripMenuItem.Name = "матрицаПредпочтенийToolStripMenuItem";
+            this.матрицаПредпочтенийToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.матрицаПредпочтенийToolStripMenuItem.Text = "Матрица предпочтений";
+            this.матрицаПредпочтенийToolStripMenuItem.Click += new System.EventHandler(this.матрицаПредпочтенийToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -161,15 +161,15 @@
             this.списокАльтернативToolStripMenuItem,
             this.матрицаПредпочтенийToolStripMenuItem1});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
-            // матрицаПредпочтенийToolStripMenuItem1
+            // списокЭкспертовToolStripMenuItem
             // 
-            this.матрицаПредпочтенийToolStripMenuItem1.Name = "матрицаПредпочтенийToolStripMenuItem1";
-            this.матрицаПредпочтенийToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
-            this.матрицаПредпочтенийToolStripMenuItem1.Text = "Матрица предпочтений";
-            this.матрицаПредпочтенийToolStripMenuItem1.Click += new System.EventHandler(this.матрицаПредпочтенийToolStripMenuItem1_Click);
+            this.списокЭкспертовToolStripMenuItem.Name = "списокЭкспертовToolStripMenuItem";
+            this.списокЭкспертовToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.списокЭкспертовToolStripMenuItem.Text = "Список экспертов";
+            this.списокЭкспертовToolStripMenuItem.Click += new System.EventHandler(this.списокЭкспертовToolStripMenuItem_Click);
             // 
             // списокАльтернативToolStripMenuItem
             // 
@@ -178,12 +178,12 @@
             this.списокАльтернативToolStripMenuItem.Text = "Список альтернатив";
             this.списокАльтернативToolStripMenuItem.Click += new System.EventHandler(this.списокАльтернативToolStripMenuItem_Click);
             // 
-            // списокЭкспертовToolStripMenuItem
+            // матрицаПредпочтенийToolStripMenuItem1
             // 
-            this.списокЭкспертовToolStripMenuItem.Name = "списокЭкспертовToolStripMenuItem";
-            this.списокЭкспертовToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.списокЭкспертовToolStripMenuItem.Text = "Список экспертов";
-            this.списокЭкспертовToolStripMenuItem.Click += new System.EventHandler(this.списокЭкспертовToolStripMenuItem_Click);
+            this.матрицаПредпочтенийToolStripMenuItem1.Name = "матрицаПредпочтенийToolStripMenuItem1";
+            this.матрицаПредпочтенийToolStripMenuItem1.Size = new System.Drawing.Size(205, 22);
+            this.матрицаПредпочтенийToolStripMenuItem1.Text = "Матрица предпочтений";
+            this.матрицаПредпочтенийToolStripMenuItem1.Click += new System.EventHandler(this.матрицаПредпочтенийToolStripMenuItem1_Click);
             // 
             // очиститьToolStripMenuItem
             // 
@@ -405,14 +405,17 @@
             this.txtAddEval.Location = new System.Drawing.Point(275, 589);
             this.txtAddEval.Multiline = true;
             this.txtAddEval.Name = "txtAddEval";
+            this.txtAddEval.ReadOnly = true;
             this.txtAddEval.Size = new System.Drawing.Size(130, 41);
             this.txtAddEval.TabIndex = 33;
+            this.txtAddEval.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddEval_KeyPress);
             // 
             // dtgrdwExp
             // 
             this.dtgrdwExp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgrdwExp.Location = new System.Drawing.Point(8, 448);
             this.dtgrdwExp.Name = "dtgrdwExp";
+            this.dtgrdwExp.ReadOnly = true;
             this.dtgrdwExp.Size = new System.Drawing.Size(398, 121);
             this.dtgrdwExp.TabIndex = 32;
             this.dtgrdwExp.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgrdwExp_CellMouseDoubleClick);
@@ -460,8 +463,10 @@
             this.txtExpEdit.Location = new System.Drawing.Point(412, 467);
             this.txtExpEdit.Multiline = true;
             this.txtExpEdit.Name = "txtExpEdit";
+            this.txtExpEdit.ReadOnly = true;
             this.txtExpEdit.Size = new System.Drawing.Size(100, 39);
             this.txtExpEdit.TabIndex = 28;
+            this.txtExpEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExpEdit_KeyPress);
             // 
             // label7
             // 
@@ -600,6 +605,7 @@
             this.dtgrdwMatrix2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dtgrdwMatrix2.Size = new System.Drawing.Size(607, 209);
             this.dtgrdwMatrix2.TabIndex = 1;
+            this.dtgrdwMatrix2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrdwMatrix2_CellEndEdit);
             // 
             // Form1
             // 
