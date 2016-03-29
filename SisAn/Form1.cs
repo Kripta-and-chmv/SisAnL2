@@ -594,6 +594,9 @@ namespace SisAn
         private void expEval_Click(object sender, EventArgs e) //сам алгоритм
         {
             float R = 0;
+            list_Alt_new.Items.Clear();
+            if (!check2())
+                return;
 
             int countExp = dtgrdwExp.Rows.Count;
             int countAlt = list_Alt.Items.Count;
@@ -618,7 +621,7 @@ namespace SisAn
             {
                 for (int i = 0; i < countExp; i++) //определяем веса
                 {
-                    V[j] += Convert.ToSingle(dtgrdwMatrix2[j, i].Value.ToString().Replace(".", ","))*S[i];
+                    V[j] += Convert.ToSingle(dtgrdwMatrix2[j, i].Value.ToString())*S[i];
                 }
 
             }
@@ -740,35 +743,44 @@ namespace SisAn
 
         private void dtgrdwMatrix2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < dtgrdwMatrix2.Rows.Count; i++)
-            {
-                double summ=0;
-                for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
-                {
-
-                    summ += Convert.ToSingle(dtgrdwMatrix2[j, i].Value);
-                }
-                if (Convert.ToSingle(summ) != 1.0)
-                {
-                    MessageBox.Show("Неверно задана матрица предпочтений!");
-                    for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
-                    {
-                        dtgrdwMatrix2.Rows[i].Cells[j].Style.BackColor = Color.Red;
-                    }
-                }
-                else
-                {
-                    for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
-                    {
-                        dtgrdwMatrix2.Rows[i].Cells[j].Style.BackColor = Color.White;
-                    }
-                }
-
-
-            }
-            return;
+            check2();
         }
 
+        private bool check2()
+        {
+            List<int> ls=new List<int>();
+            for (int i = 0; i < dtgrdwMatrix2.Rows.Count; i++)
+            {
+                bool flag = false;
+                double summ = 0;
+                for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
+                {
+                    if((Convert.ToString(dtgrdwMatrix2[j, i].Value)==""))
+                        flag = true;
+                    summ += Convert.ToSingle(dtgrdwMatrix2[j, i].Value);
+                    dtgrdwMatrix2.Rows[i].Cells[j].Style.BackColor = Color.White;
+                }
+                if ((Convert.ToSingle(summ) != 1.0) || (flag))
+                {
+                    ls.Add(i);
+                }
+      
+                
+            }
+            if (ls.Count != 0)
+            {
+                MessageBox.Show("Неверно задана матрица предпочтений!");
+                for (int i=0; i<ls.Count; i++)
+                    for (int j = 0; j < dtgrdwMatrix2.Columns.Count; j++)
+                    {
+                        dtgrdwMatrix2.Rows[ls[i]].Cells[j].Style.BackColor = Color.Red;
+                    }
+                return false;
+            }
+            return true;
+        }
 
     }
+    
 }
+
